@@ -1,8 +1,62 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  color: #333333;
+  height: 100%;
 }
-
 a {
   color: #00B7FF;
+}
+header {
+  padding: 25px 0px;
+  border-bottom: 1px solid #333333;
+}
+.border-left {
+  height:100%;
+  overflow:scroll;
+  position:fixed;
+  right:0px;
+  padding-bottom: 100px;
+}
+
+div.border-right {
+  border-right: 1px solid #333333;
+  min-height: 100%;
+}
+div.height100 {
+  height: 100%;
+}
+
+#form-container                {  margin-bottom:20px;
+    border-radius:5px; text-align: center;}
+#form-container .page-header   {  margin:0; padding:30px;
+    border-top-left-radius:5px; border-top-right-radius:5px; }
+
+#form-container .page-header h2 {
+  margin-bottom: 40px;
+}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#080808; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+
+/* we will style the span as the circled number */
+#status-buttons span            { color: #FFF; background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px;
+    border-radius:50%; }
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   { background:#00BC8C; }
+
+.btn-primary {background:#00BC8C; border:none;}
+
+div.preloaderOverlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 22% 0 0 0;
+  display: none;
 }

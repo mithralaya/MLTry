@@ -10,7 +10,7 @@ const W = require('whatsit');
 const Connection = new Conn();
 
 parser.on('data', (row) => {
-  if (W.type(row[2]) === "Email" && row[0].length > 0) {
+  if (row[0].length > 0) {
     let sql = "INSERT INTO RewardCategory (`title`) VALUES ('" + row[0] + "') ON DUPLICATE KEY UPDATE `title` = VALUES(title)";
     Connection.executeQuery(sql).on("error", (err) => {
       console.log(err);
@@ -26,7 +26,7 @@ parser.on('data', (row) => {
 
 /* GET users listing. */
 router.get('/import', function(req, res, next) {
-  fs.createReadStream('./UsersEmail.csv').pipe(parser);
+  fs.createReadStream('./category.csv').pipe(parser);
   res.end();
 });
 

@@ -1,0 +1,89 @@
+<div class="row height100">
+  <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 border-right">
+    <h2 style="text-align:center; margin: 10px 0px 0px;">Build your Campaign</h2><hr/>
+    <div id="form-container">
+        <div class="page-header text-center">
+          <div id="status-buttons" class="text-center">
+            <a ui-sref-active="active" ui-sref=".campaign"><span>1</span> Create a Campaign</a>
+            <a ui-sref-active="active" ui-sref=".offers"><span>2</span> Add Offers &amp; Links</a>
+            <a ui-sref-active="active" ui-sref=".review"><span>3</span> Review &amp; Send</a>
+          </div>
+        </div><hr/>
+        <form id="signup-form" ng-submit="processForm()">
+          <div id="form-views" ui-view></div>
+        </form>
+    </div>
+  </div>
+  <div class="col-sm-7 col-md-7 col-lg-7 col-xl-7 border-left">
+    <h2 style="text-align:center; margin: 10px 0px 0px;">Campaign Preview</h2><hr/>
+    <div class="container" style="width: 800px; height: auto; margin: 0px auto; padding: 20px 10px;">
+      <div class="logo" style="text-align: center; font-size: 16pt; font-weight:500;">
+        <img src="http://asset.weraiseapp.com.s3.amazonaws.com/email/logo.png" alt="Team First" />
+      </div>
+      <hr style="border: none; border-bottom: 1px solid #000; box-shadow: none;"/>
+      <div class="someText" style="text-align: center; font-size: 16pt; font-weight:500;">
+        <p style="text-align:left;">Dear [FirstName],</p>
+        <p>{{campaign.text}}</p>
+      </div>
+      <hr style="border: none; border-bottom: 1px solid #000; box-shadow: none;"/>
+      <div class="content" style="margin: 20px 0px;">
+        <table cellpadding="0" cellspacing="0" width="800">
+          <tbody>
+            <tr>
+              <td align="center" width="400">
+                <div class="image">
+                  <a href="{{campaign.offers[0].link}}" style="text-decoration: none; color: #5bd6a2;"><img src="http://asset.weraiseapp.com.s3.amazonaws.com/email/{{campaign.offers[0].image}}" alt="{{campaign.offers[0].title}}" width="350" style="border-radius: 5px;" /></a>
+                </div>
+                <div class="title" style="font-weight: 800; font-size: 10pt;">
+                  <a href="{{campaign.offers[0].link}}" style="text-decoration: none; color: #5bd6a2;"><p>{{campaign.offers[0].title}}</p></a>
+                </div>
+                <div class="text" style="font-size: 10pt; color: #999999;">
+                  <a href="{{campaign.offers[0].link}}" style="text-decoration: none; color: #999999;"><p>{{campaign.offers[0].desc}}</p></a>
+                </div>
+              </td>
+              <td align="center" width="400">
+                <div class="image">
+                  <a href="{{campaign.offers[1].link}}" style="text-decoration: none; color: #5bd6a2;"><img src="http://asset.weraiseapp.com.s3.amazonaws.com/email/{{campaign.offers[1].image}}" alt="{{campaign.offers[1].title}}" width="350" style="border-radius: 5px;" /></a>
+                </div>
+                <div class="title" style="font-weight: 800; font-size: 10pt;">
+                  <a href="{{campaign.offers[1].link}}" style="text-decoration: none; color: #5bd6a2;"><p>{{campaign.offers[1].title}}</p></a>
+                </div>
+                <div class="text" style="font-size: 10pt; color: #999999;">
+                  <a href="{{campaign.offers[1].link}}" style="text-decoration: none; color: #999999;"><p>{{campaign.offers[1].desc}}</p></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" width="400">
+                <div class="image">
+                  <a href="{{campaign.offers[2].link}}" style="text-decoration: none; color: #5bd6a2;"><img src="http://asset.weraiseapp.com.s3.amazonaws.com/email/{{campaign.offers[2].image}}" alt="{{campaign.offers[2].title}}" width="350" style="border-radius: 5px;" /></a>
+                </div>
+                <div class="title" style="font-weight: 800; font-size: 10pt;">
+                  <a href="{{campaign.offers[2].link}}" style="text-decoration: none; color: #5bd6a2;"><p>{{campaign.offers[2].title}}</p></a>
+                </div>
+                <div class="text" style="font-size: 10pt; color: #999999;">
+                  <a href="{{campaign.offers[2].link}}" style="text-decoration: none; color: #999999;"><p>{{campaign.offers[2].desc}}</p></a>
+                </div>
+              </td>
+              <td align="center" width="400">
+                <div class="image">
+                  <a href="{{campaign.offers[3].link}}" style="text-decoration: none; color: #5bd6a2;"><img src="http://asset.weraiseapp.com.s3.amazonaws.com/email/{{campaign.offers[3].image}}" alt="{{campaign.offers[3].title}}" width="350" style="border-radius: 5px;" /></a>
+                </div>
+                <div class="title" style="font-weight: 800; font-size: 10pt;">
+                  <a href="{{campaign.offers[3].link}}" style="text-decoration: none; color: #5bd6a2;"><p>{{campaign.offers[3].title}}</p></a>
+                </div>
+                <div class="text" style="font-size: 10pt; color: #999999;">
+                  <a href="{{campaign.offers[3].link}}" style="text-decoration: none; color: #999999;"><p>{{campaign.offers[3].desc}}</p></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr style="border: none; border-bottom: 1px solid #000; box-shadow: none;"/>
+      <div class="someText" style="text-align: center; font-size: 16pt; font-weight:500;">
+        <p style="text-align:left; font-size: 12pt">Many Thanks, <br/>Stefan from TeamFirst</p>
+      </div>
+    </div>
+  </div>
+</div>

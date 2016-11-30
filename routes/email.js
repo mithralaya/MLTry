@@ -8,6 +8,7 @@ const cmApi = new CreateSend({
   apiKey: 'd8b76c4a1a84c4b4235f5adbce93539a'
 });
 const cmClientId = "027423451c3a637dda9330f2a0d1f076";
+const cmListId = "b2270c29115200adca7523be88a497a0";
 
 AWS.config.update({
   accessKeyId: "AKIAJLDU5OII37WI5ZZQ",
@@ -21,7 +22,7 @@ const ses = new AWS.SES({
 
 router.get('/campaignMonitor', function() {
   /*let details = {
-    "Name": "Template Two",
+    "Name": "2x2 Template",
     "HtmlPageURL": "http://asset.weraiseapp.com.s3.amazonaws.com/email/CMTemplate.html"
   };
   cmApi.post('templates/' + cmClientId + '.json', null, details, function(err, templateId) {
@@ -29,19 +30,19 @@ router.get('/campaignMonitor', function() {
             console.log(templateId);
         });*/
   let payload = {
-    "Name": "Teamfirst Campaign - Test",
+    "Name": "Teamfirst Campaign - 2x2",
     "Subject": "My Subject",
     "FromName": "My Name",
     "FromEmail": "karthik@weraiseapp.com",
     "ReplyTo": "karthik@weraiseapp.com",
     "ListIDs": [
-      "b2270c29115200adca7523be88a497a0"
+      "d2ac807f48294c1172d10cd3ce092b5a"
     ],
-    "TemplateID": "8351241b0e672a18896cca43d00cd66a",
+    "TemplateID": "49e0802e2d717825ebb517e99c4f1cf4",
     "TemplateContent": {
       "Singlelines": [
         {
-          "Content": "Dear Karthik"
+          "Content": "Dear [firstname,fallback=Customer]"
         }
       ],
       "Multilines": [

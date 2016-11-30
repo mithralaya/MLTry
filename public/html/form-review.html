@@ -1,0 +1,69 @@
+<h3>Review &amp; Send</h3><br/>
+<div style="text-align:left">
+  <h5>Step 1: Send Preview Emails &amp; Grab CampaignId</h5><br/>
+  <div class="form-group">
+    <label for="exampleTextarea">Preview Email Addresses:</label>
+    <textarea ng-model="campaign.previewEmailsAdd" class="form-control" id="exampleTextarea" rows="3" placeholder="aaa@bbb.ccc, xxx@yyy.zzz, ..."></textarea>
+    <small id="emailHelp" class="form-text text-muted">Comma separated email addresses</small>
+  </div>
+  <div class="alert alert-danger" role="alert" ng-show="error">
+    {{error}}
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align:right">
+    <span style="color: purple"><b>{{campaignIdText}}</b></span>
+    <button type="submit" name="preview" class="btn btn-primary btn-lg" ng-disabled="!campaign.previewEmailsAdd.length > 0">Send Preview</button>
+  </div><br clear="all"/>
+  <hr/>
+  <br clear="all"/>
+  <h5>Step 2: Check &amp; Send</h5><br/>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" ng-model="spell">
+      You agree that you checked for spelling errors.
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" ng-model="grammer">
+      You agree that you checked for grammer errors.
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" ng-model="image">
+      You agree that you checked for image upload errors.
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" ng-model="looks">
+      You agree that you are happy with the campaign the way it looks now and ready to send to our customers.
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" ng-model="money">
+      You agree that there is <b>enough money in Campaign Monitor</b> account to send this campaign successfully.
+    </label>
+  </div>
+  <hr/>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Confirmation Email*</label>
+    <input type="text" ng-model="campaign.confirmationEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abc@xyc.com">
+    <small id="emailHelp" class="form-text text-muted">Sends a confirmation email once the campaign delivered to recipient</small>
+  </div>
+  <hr/>
+
+  <div class="form-check">
+    <label class="form-check-label">
+      <b>Total no. of recipient: 11148</b>
+    </label>
+  </div>
+  <hr/>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="text-align:left">
+    <button class="btn btn-secondary" ui-sref="form.offers"><< Prev</button>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="text-align:right">
+    <button ng-click="sendEmails()" class="btn btn-success btn-lg" ng-disabled="!money || !looks || !image || !grammer || !spell || !campaign.campaignId">Send</button>
+  </div>
+</div>

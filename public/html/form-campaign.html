@@ -1,0 +1,27 @@
+<h3>Create a Campaign</h3><br/>
+<div style="text-align:left">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Subject*</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Weekly Student Campaign <DATE>"  ng-model="campaign.subject">
+    <small id="emailHelp" class="form-text text-muted">A unique name for the campaign. This will not appear anywhere in the email you send.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Welcome Message*</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="campaign.text"></textarea>
+    <small id="emailHelp" class="form-text text-muted">A welcome message which goes at the top of your email.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">When to send?*</label>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input type="checkbox" aria-label="Checkbox for following text input" ng-model="campaign.sendNow"> Send ASAP
+        </span>
+        <input type="text" class="form-control col-xl-6" aria-label="Text input with checkbox" ng-disabled="campaign.sendNow" ng-model="campaign.sendDate" placeholder="YYYY-MM-DD HH:MM">
+      </div>
+      <small id="emailHelp" class="form-text text-muted">Date format YYYY-MM-DD HH:MM.</small>
+  </div>
+  <hr/>
+  <div class="" style="text-align:right">
+    <button class="btn btn-primary" ui-sref="form.offers">Next >></button>
+  </div>
+</div>
